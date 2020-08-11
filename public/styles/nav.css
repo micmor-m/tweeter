@@ -17,6 +17,9 @@ html {
   font-family: sans-serif;
   font-family: 'Source+Sans+Pro';
   display: flex;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 .span {
@@ -30,7 +33,7 @@ html {
   padding-bottom: 20px;
 }
 
-nav a {
+nav button {
   margin-left: auto;
   align-self: center;
   align-items: center;
@@ -39,4 +42,6 @@ nav a {
   margin-right: 20px;
   color:  white;
   text-align: center;
+  background-color: transparent;
+  border: transparent;
 }
