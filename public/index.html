@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,7 +27,7 @@
     <nav class="nav">
       <span class="span">tweeter</span>
       <!-- <div> -->
-      <a class="navbar-brand" href="/urls"><p>Write a new tweet</p> <i class="fa fa-chevron-down" style="font-size:24px"></i></a>
+      <a class="navbar-brand" href="/urls"><p><b>Write</b> a new tweet</p> <i class="fa fa-chevron-down" style="font-size:24px; color:red"></i></a>
       <!-- </div> -->
     </nav>
     <header class="header">
@@ -40,14 +41,17 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <div>
-        <p>This is just something to see how it htjyjyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyylooks.</p>
-      </div>
-      <br>
-      <div>
-        <p>This is just something to see how it looks.</p>
-      </div>
-
+      <section >
+        <h2 id="container-title" >Compose Tweet</h2>
+        <form class="new-tweet" action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div id="but_char">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
 
 
