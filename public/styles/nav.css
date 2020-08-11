@@ -1,0 +1,37 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+.nav {
+  height: 120px;
+  color:  white;
+  background-color: #4056A1;
+  font-size: 24px; 
+  font-family: sans-serif;
+  font-family: 'Bungee', cursive;
+  display: flex;
+}
+
+.span {
+  display: inline-block;
+  color: white;
+  padding: 1.5em;
+  margin: 0.0em;
+  border: 1px solid black;
+}
+
+nav a {
+  margin-left: auto;
+  align-self: center;
+  align-items: center;
+  font-size: 18px;
+  border: 1px solid black;
+
+}
