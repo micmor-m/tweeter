@@ -43,3 +43,63 @@ button {
 background-color: blue;
 color: white;
 }
+
+/* when negative number make counter red */
+.negativeNumber {
+  color: red;
+}
+
+
+article.tweet_header {
+  font-family: sans-serif;
+  font-family: 'Source+Sans+Pro';
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  vertical-align:left;
+  /* justify-content: center; */
+  border: 5px solid rgb(FF, FF, FF);
+  border-style: solid;
+  /* margin: auto; */
+  /* text-align: center; */
+  justify-content: flex-start;
+  background-color: hsl(189, 40%, 65%);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+.shadow{
+box-shadow: 5px 5px #00000066;
+}
+
+.msm_top {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+#name_user {
+  display: flex;
+  align-items: center;
+ }
+
+ #days {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  vertical-align:stretch;
+  background-color: transparent;
+  border: transparent;
+ }
+
+ #btn1, #btn2, #btn3  {
+  background-color: transparent;
+  border: transparent;
+ }

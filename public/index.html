@@ -20,6 +20,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -47,9 +48,33 @@
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div id="but_char">
-            <button type="submit">Tweet</button>
+            <button id="btn" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
+
+          <article class="tweet_header"> 
+         
+            <div class = msm_top>
+              <div id="name_user">
+                <img src="/images/girl.png"> 
+                <label  for="tweet-user">Roda Jacobs</label>
+              </div>
+              <label for="tweet-sender">@Mrs Jacob</label>
+            </div>
+            <textarea name="text" id="tweet-text"></textarea>
+              <div id="days">
+            <p id="days_ago" type="submit">10 days ago</p>
+            <div id="icons">
+              <button id="btn1" type="submit"><img src="/images/flag.png"> </button>
+              <button id="btn2" type="submit"><img src="/images/arrow.png"> </button>
+              <button id="btn3" type="submit"><img src="/images/heart.png"></button>
+            </div>        
+            </div>
+
+          </article>
+
+
+
         </form>
       </section>
 
