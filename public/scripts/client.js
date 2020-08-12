@@ -1,10 +1,10 @@
 /*
- * Client-side JS logic goes here
+ * Client-side JS
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ * Reminder: all DOM work in) jQuery's document ready function
  */
 
-//Test / driver code (temporary). Eventually will get this from the server.
+//Test code (temporary). Eventually will get this from the server.
 const data = [
   {
     "user": {
@@ -30,10 +30,7 @@ const data = [
   }
 ]
 
-
-
-
- const createTweetElement = function(data) {
+const createTweetElement = function(data) {
   console.log("DATA IS INSIDE");
   console.log(data)
 
@@ -44,7 +41,6 @@ const data = [
   let diffDays = Math.floor((today - datetime) /1000 / 60 / 60 / 24);
   console.log(diffDays);
   
-//const item = `
   const tweet = `
   <article id="tweet" class="tweet_header"> 
     <div class = msm_top>
@@ -65,9 +61,7 @@ const data = [
     </div>
     </article>
     `
-
   return tweet;
-
 }
 
 const renderTweets = function(tweets) {
@@ -78,21 +72,39 @@ const renderTweets = function(tweets) {
     let tweetToAdd = createTweetElement(tweet);
     console.log("Tweet to add ", tweetToAdd);
    $('#tweeter').append(tweetToAdd);
-   //$('#tweet').append(tweetToAdd);
   }
 }
 
 
-//const $tweet = createTweetElement(tweetData);
+//To remember! all function dealing with $ means jquery to be inside a $(document).ready(function()
+$(document).ready(function() {  
+  renderTweets(data);
+});
 
-// Test / driver code (temporary)
-//console.log($tweet); // to see what it looks like
-//$('.container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
-//const $tweet_header = $(`<article class="tweet_header">Hello world</article>`);
-
+// AJAX POST request that sends the form data to the server.
 $(document).ready(function() {
   
-renderTweets(data);
-
+  $( "#upload_tweeter" ).submit(function( event ) {
+    console.log('Button clicked, performing ajax call...');
+    //alert( "Handler for .submit() called." );
+    event.preventDefault();
+    //Save some data to the server and notify the user once it's complete.
+    str = $( "#upload_tweeter" ).serialize();
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      //data: { name: "John", location: "Boston" }
+      data: str
+    })
+    .done(function( msg ) {
+      alert( "Data Saved: " + msg );
+      console.log( str );
+    })
+  })
 });
+
+
+$(document).ready(function() {  
+  loadTweets();
+});
+
