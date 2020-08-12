@@ -5,30 +5,30 @@
  */
 
 //Test code (temporary). Eventually will get this from the server.
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1261116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1261116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ]
 
 const createTweetElement = function(data) {
   console.log("DATA IS INSIDE");
@@ -76,6 +76,8 @@ const renderTweets = function(tweets) {
 }
 
 
+
+
 //To remember! all function dealing with $ means jquery to be inside a $(document).ready(function()
 $(document).ready(function() {  
   renderTweets(data);
@@ -105,6 +107,28 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {  
+  //within the document ready
+  const loadTweets = function() {
+    //$(function() {
+      //const $button = $('#load-more-posts');
+      $(document).ready(function() {
+        console.log('Page ready, getting all tweeter from serverx...');
+        //$.ajax('more-posts.html', { method: 'GET' })
+        $.ajax({
+          method: "GET",
+          url: "/tweets",
+          //dataType: "script"
+        })
+       
+
+        .then(function (moreTweets) {
+          renderTweets(moreTweets);
+           console.log('Success: ', moreTweets);
+        //   $button.replaceWith(morePostsHtml);
+        });
+      });
+    //});
+  };
   loadTweets();
 });
 
