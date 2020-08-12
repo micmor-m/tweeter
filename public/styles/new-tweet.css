@@ -3,7 +3,7 @@
   font-family: 'Source+Sans+Pro';
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: autopx;
   width: auto;
   vertical-align:left;
   /* justify-content: center; */
@@ -13,8 +13,8 @@
   /* text-align: center; */
   justify-content: flex-start;
   background-color: hsl(189, 40%, 65%);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
+
   
 
 }
