@@ -69,7 +69,9 @@ article.tweet_header {
   padding-right: 10px;
   margin-top: 10px;
 }
-.shadow{
+/* this class create the shadow effect of the object pointed by the selector */
+/* jus take the same selector and add :hover on it */
+article.tweet_header:hover{
 box-shadow: 5px 5px #00000066;
 }
 

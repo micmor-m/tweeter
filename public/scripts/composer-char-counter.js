@@ -26,18 +26,17 @@ $("#tweet-text").on('keydown', function() {
     }
 });
 
-
-$("article.tweet_header").mouseenter( function() {
- console.log("Iam over the box");
- $("article.tweet_header").addClass("shadow");
- $("article.tweet_header").mouseleave( function() {
-  console.log("Iam out the box");
-  $("article.tweet_header").removeClass("shadow");
- });
-
-});
-
-
+//This is a right way to do it in JS but it can be done 
+//more simply directly in css file
+//see new-tweet.css file
+// $("article.tweet_header").mouseenter( function() {
+//  console.log("Iam over the box");
+//  $("article.tweet_header").addClass("shadow");
+//  $("article.tweet_header").mouseleave( function() {
+//   console.log("Iam out the box");
+//   $("article.tweet_header").removeClass("shadow");
+//  });
+// });
 
 
 });
