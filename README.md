@@ -46,6 +46,6 @@ how long ago the tweet was created, on the left
 
 ## Final Product
 
-!["Screenshot page - "](URL)
-!["Screenshot page - "](URL)
-!["Screenshot page - "](URL)
+!["Screenshot page - tweets"](https://github.com/micmor-m/tweeter/blob/master/docs/tweets.png?raw=true)
+!["Screenshot page - error message"](https://github.com/micmor-m/tweeter/blob/master/docs/error_message.png?raw=true)
+!["Screenshot page - responsive"](https://github.com/micmor-m/tweeter/blob/master/docs/responsive.png?raw=true)
