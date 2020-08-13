@@ -18,15 +18,15 @@ $(document).ready(function() {
     console.log(this.value);
     console.log("tEXT LENGTH IS :", this.value.length);
   
-    $(".counter").text(140 - this.value.length);
+    $("#counter").text(140 - this.value.length);
 
     if ((140 - this.value.length) < 0) {
-      console.log( $(".counter"))
+      console.log( $("#counter"))
       //if negative add a new class with color text red
-      $(".counter").addClass("negativeNumber");
+      $("#counter").addClass("negativeNumber");
     } else {
       //in not remove the class and come back the black color
-      $(".counter").removeClass("negativeNumber");
+      $("#counter").removeClass("negativeNumber");
     }
   });
 

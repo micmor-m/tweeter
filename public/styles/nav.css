@@ -45,3 +45,23 @@ nav button {
   background-color: transparent;
   border: transparent;
 }
+
+/* this class create the shadow effect of the object pointed by the selector
+/* jus take the same selector and add :hover on it */
+nav button:hover{
+  box-shadow: 5px 5px #00000066;
+  background-color: rgb(110, 98, 98);
+  cursor: pointer;
+  }
+/*
+  #chevron {
+    animation-name: bounce-4;
+    animation-timing-function: ease;
+}
+@keyframes bounce-4 {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-100px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
+} */

@@ -2,6 +2,7 @@
   font-family: sans-serif;
   font-family: 'Source+Sans+Pro';
   display: flex;
+  
   flex-direction: column;
   height: autopx;
   width: auto;
@@ -14,11 +15,12 @@
   justify-content: flex-start;
   background-color: hsl(189, 40%, 65%);
   padding: 10px;
-
-  
-
 }
 
+/* when not toggled the text form
+ .hidden {
+  display: none;
+}  */
 
 #but_char {
   display: flex;
@@ -104,4 +106,21 @@ box-shadow: 5px 5px #00000066;
  #btn1, #btn2, #btn3  {
   background-color: transparent;
   border: transparent;
+ }
+
+ #error-msg {
+  height: 70px;
+  width: auto;
+  /* vertical-align:middle; */
+  /* justify-content: center; */
+  border: 5px solid red;
+  border-style: solid;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: none;
  }
