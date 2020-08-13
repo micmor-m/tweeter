@@ -1,0 +1,17 @@
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .header {
+    float: left;
+    width: 30%;
+  }
+
+  .container{
+    width: 66.7%;
+    float: right;
+  }
+
+  .tagline {
+    display: flex;
+    height: 120px;
+  }
+}

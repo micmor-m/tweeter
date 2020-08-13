@@ -2,18 +2,11 @@
   font-family: sans-serif;
   font-family: 'Source+Sans+Pro';
   display: flex;
-  
   flex-direction: column;
   height: autopx;
   width: auto;
   vertical-align:left;
-  /* justify-content: center; */
-  border: 5px solid rgb(111,41,97);
-  border-style: solid;
-  /* margin: auto; */
-  /* text-align: center; */
   justify-content: flex-start;
-  background-color: hsl(189, 40%, 65%);
   padding: 10px;
 }
 
@@ -22,25 +15,24 @@
   display: none;
 }  */
 
+/* button in the tweet form */
 #but_char {
   display: flex;
   text-align: left;
   justify-content: space-between;
   margin-top: 10px;
-  /* justify-content: flex-end; */
   font-family: sans-serif;
   font-family: 'Bungee', cursive;
   font-size: 18px;
 }
 
-
 #tweet-text {
   margin-top: 10px;
   border-bottom-width: 3px;
   border-bottom-color: black;
-  /* justify-content: flex-end; */
 }
 
+/* button in the tweet form */
 button {
 background-color: blue;
 color: white;
@@ -51,7 +43,6 @@ color: white;
   color: red;
 }
 
-
 article.tweet_header {
   font-family: sans-serif;
   font-family: 'Source+Sans+Pro';
@@ -60,59 +51,55 @@ article.tweet_header {
   height: auto;
   width: auto;
   vertical-align:left;
-  /* justify-content: center; */
   border: 5px solid rgb(FF, FF, FF);
   border-style: solid;
-  /* margin: auto; */
-  /* text-align: center; */
   justify-content: flex-start;
-  background-color: hsl(189, 40%, 65%);
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 10px;
 }
+
 /* this class create the shadow effect of the object pointed by the selector */
-/* jus take the same selector and add :hover on it */
+/* just take the same selector and add :hover on it */
 article.tweet_header:hover{
-box-shadow: 5px 5px #00000066;
+  box-shadow: 5px 5px #00000066;
 }
 
 .msm_top {
- display: flex;
- justify-content: space-between;
- align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #name_user {
   display: flex;
   align-items: center;
- }
+}
 
- #days {
+#days {
   display: flex;
   justify-content: space-between;
   align-items: center;
- }
+}
 
- .icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  vertical-align:stretch;
+#icons {
+  display: none;
+}
+
+/* this will show the icons when hover the text box with the mouse */
+article.tweet_header:hover #icons{
+  box-shadow: 5px 5px #00000066;
+  display: inherit;
+}
+
+#btn1, #btn2, #btn3  {
   background-color: transparent;
   border: transparent;
- }
+} 
 
- #btn1, #btn2, #btn3  {
-  background-color: transparent;
-  border: transparent;
- }
-
- #error-msg {
+#error-msg {
   height: 70px;
   width: auto;
-  /* vertical-align:middle; */
-  /* justify-content: center; */
   border: 5px solid red;
   border-style: solid;
   margin: auto;
@@ -123,4 +110,4 @@ box-shadow: 5px 5px #00000066;
   padding-top: 15px;
   padding-bottom: 15px;
   display: none;
- }
+}

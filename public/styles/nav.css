@@ -20,6 +20,9 @@ html {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+  padding-left: 10px;
+  padding-right: 10px;
+
 }
 
 .span {
@@ -28,7 +31,6 @@ html {
   color: white;
   padding: 1.5em;
   margin: 0.0em;
-  border: 1px solid black;
   padding-top: 55px;
   padding-bottom: 20px;
 }
@@ -38,7 +40,7 @@ nav button {
   align-self: center;
   align-items: center;
   font-size: 18px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-right: 20px;
   color:  white;
   text-align: center;
@@ -47,21 +49,9 @@ nav button {
 }
 
 /* this class create the shadow effect of the object pointed by the selector
-/* jus take the same selector and add :hover on it */
+/* just take the same selector and add :hover on it */
 nav button:hover{
   box-shadow: 5px 5px #00000066;
-  background-color: rgb(110, 98, 98);
+  background-color: rgb(211, 138, 29);
   cursor: pointer;
-  }
-/*
-  #chevron {
-    animation-name: bounce-4;
-    animation-timing-function: ease;
 }
-@keyframes bounce-4 {
-    0%   { transform: scale(1,1)    translateY(0); }
-    10%  { transform: scale(1.1,.9) translateY(0); }
-    30%  { transform: scale(.9,1.1) translateY(-100px); }
-    50%  { transform: scale(1,1)    translateY(0); }
-    100% { transform: scale(1,1)    translateY(0); }
-} */
