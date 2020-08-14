@@ -10,7 +10,7 @@ const createTweetElement = function(data) {
   let today = Date.now();
 
   //(date2 - date1) / 1000 / 60 / 60 / 24
-  let diffDays = Math.floor((today - datetime) /1000 / 60 / 60 / 24);
+  let diffDays = Math.floor((today - datetime) / 1000 / 60 / 60 / 24);
   
   //tamplete for dynamic HTML
   const tweet = `
@@ -32,18 +32,18 @@ const createTweetElement = function(data) {
     </div>        
   </div>
   </article>
-  `
+  `;
   return tweet;
-}
+};
 
 //helper function to loop through all object of the array in reverse order
 //takes return value and appends it to the tweets container
 const renderTweets = function(tweets) {
-  for (let i =  tweets.length -1; i >= 0; i--) {
+  for (let i =  tweets.length - 1; i >= 0; i--) {
     let tweetToAdd = createTweetElement(tweets[i]);
     $('#tweeter').append(tweetToAdd);
-  } 
-}
+  }
+};
 
 // AJAX POST request that sends the form data to the server.
 $(document).ready(function() {
@@ -59,7 +59,7 @@ $(document).ready(function() {
       //always use .text with jQuery to get the value of the element if a text
       $( "#error-msg" ).text( "Your tweeter is empty!" );
       $( "#error-msg" ).slideDown();
-      event.stopPropagation(); 
+      event.stopPropagation();
       return false;
 
     } else if (parseInt($("#counter").val()) < 0) {
@@ -68,25 +68,25 @@ $(document).ready(function() {
         $( "#error-msg" ).text( "Your tweeter is too long!" );
         $( "#error-msg" ).slideDown();
       }
-      event.stopPropagation(); 
+      event.stopPropagation();
       return false;
 
     } else {
       //Save data to the server
-      str = $( "#upload_tweeter" ).serialize();
+      let str = $( "#upload_tweeter" ).serialize();
       $.ajax({
         method: "POST",
         url: "/tweets",
         data: str
       })
       
-      .done(function( data ) {
-        //remove all tweeers by reloading the page without GET them from the server
-        location.reload(true);
+        .done(function() {
+          //remove all tweeers by reloading the page without GET them from the server
+          location.reload(true);
         
-        //then reload all of them
-        loadTweets();
-      })
+          //then reload all of them
+          loadTweets();
+        });
     }
   })
 });
@@ -98,14 +98,14 @@ const loadTweets = function() {
       method: "GET",
       url: "/tweets",
     })
-    .then(function (moreTweets) {
-      //render them again
-      renderTweets(moreTweets);
-    });
+      .then(function (moreTweets) {
+        //render them again
+        renderTweets(moreTweets);
+      });
   });
 };
 
 //when docment ready ask the server for all existing tweets
-$(document).ready(function() {  
+$(document).ready(function() {
   loadTweets();
 });
