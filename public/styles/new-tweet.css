@@ -10,11 +10,6 @@
   padding: 10px;
 }
 
-/* when not toggled the text form
- .hidden {
-  display: none;
-}  */
-
 /* button in the tweet form */
 #but_char {
   display: flex;

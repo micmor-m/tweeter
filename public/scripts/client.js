@@ -9,7 +9,6 @@ const createTweetElement = function(data) {
   let datetime = new Date(data.created_at);
   let today = Date.now();
 
-  //(date2 - date1) / 1000 / 60 / 60 / 24
   let diffDays = Math.floor((today - datetime) / 1000 / 60 / 60 / 24);
   
   //tamplete for dynamic HTML
@@ -22,7 +21,7 @@ const createTweetElement = function(data) {
       </div>
       <label for="tweet-sender">"${data.user.handle}"</label>
     </div>
-    <textarea name="text" id="tweet-text">"${data.content.text}"</textarea>
+      <label for="tweet-text" name="text" id="tweet-text">${data.content.text}</label>
     <div id="days">
       <p id="days_ago" type="submit">"${diffDays} days ago"</p>
       <div id="icons" class="seeicons">
