@@ -4,49 +4,64 @@
  * Reminder: all DOM work in) jQuery's document ready function
  */
 
-const createTweetElement = function(data) {
-  //get date created from data and calculate how many days ago
-  let datetime = new Date(data.created_at);
-  let today = Date.now();
-
-  let diffDays = Math.floor((today - datetime) / 1000 / 60 / 60 / 24);
-  
-  //tamplete for dynamic HTML
-  const tweet = `
-  <article id="tweet" class="tweet_header"> 
-    <div class = msm_top>
-      <div id="name_user">
-        <img src="${data.user.avatars}"> 
-        <label  for="tweet-user">"${data.user.name}"</label>
-      </div>
-      <label for="tweet-sender">"${data.user.handle}"</label>
-    </div>
-      <label for="tweet-text" name="text" id="tweet-text">${data.content.text}</label>
-    <div id="days">
-      <p id="days_ago" type="submit">"${diffDays} days ago"</p>
-      <div id="icons" class="seeicons">
-      <button id="btn1" type="submit"><img src="/images/flag.png"> </button>
-      <button id="btn2" type="submit"><img src="/images/arrow.png"> </button>
-      <button id="btn3" type="submit"><img src="/images/heart.png"></button>
-    </div>        
-  </div>
-  </article>
-  `;
-  return tweet;
-};
-
-//helper function to loop through all object of the array in reverse order
-//takes return value and appends it to the tweets container
-const renderTweets = function(tweets) {
-  for (let i =  tweets.length - 1; i >= 0; i--) {
-    let tweetToAdd = createTweetElement(tweets[i]);
-    $('#tweeter').append(tweetToAdd);
-  }
-};
-
-// AJAX POST request that sends the form data to the server.
 $(document).ready(function() {
-  $( "#upload_tweeter" ).submit(function( event ) {
+
+  const createTweetElement = function(data) {
+    //get date created from data and calculate how many days ago
+    const datetime = new Date(data.created_at);
+    const today = Date.now();
+  
+    const diffDays = Math.floor((today - datetime) / 1000 / 60 / 60 / 24);
+    
+    //tamplete for dynamic HTML
+    const tweet = `
+    <article id="tweet" class="tweet_header"> 
+      <div class = msm_top>
+        <div id="name_user">
+          <img src="${data.user.avatars}"> 
+          <label  for="tweet-user">"${data.user.name}"</label>
+        </div>
+        <label for="tweet-sender">"${data.user.handle}"</label>
+      </div>
+        <label for="tweet-text" name="text" id="tweet-text">${data.content.text}</label>
+      <div id="days">
+        <p id="days_ago" type="submit">"${diffDays} days ago"</p>
+        <div id="icons" class="seeicons">
+        <button id="btn1" type="submit"><img src="/images/flag.png"> </button>
+        <button id="btn2" type="submit"><img src="/images/arrow.png"> </button>
+        <button id="btn3" type="submit"><img src="/images/heart.png"></button>
+      </div>        
+    </div>
+    </article>
+    `;
+    return tweet;
+  };
+  
+  //helper function to loop through all object of the array in reverse order
+  //takes return value and appends it to the tweets container
+  const renderTweets = function(tweets) {
+    for (let i =  tweets.length - 1; i >= 0; i--) {
+      const tweetToAdd = createTweetElement(tweets[i]);
+      $('#tweeter').append(tweetToAdd);
+    }
+  };
+
+  //GET /tweets request to the server
+  const loadTweets = function() {
+    $(document).ready(function() {
+      $.ajax({
+        method: "GET",
+        url: "/tweets",
+      })
+        .then(function(moreTweets) {
+          //render them again
+          renderTweets(moreTweets);
+        });
+    });
+  };
+
+  // AJAX POST request that sends the form data to the server.
+  $( "#upload_tweeter" ).submit(function(event) {
     //stop preventDefault at the beginning always
     event.preventDefault();
 
@@ -72,7 +87,7 @@ $(document).ready(function() {
 
     } else {
       //Save data to the server
-      let str = $( "#upload_tweeter" ).serialize();
+      const str = $( "#upload_tweeter" ).serialize();
       $.ajax({
         method: "POST",
         url: "/tweets",
@@ -87,24 +102,8 @@ $(document).ready(function() {
           loadTweets();
         });
     }
-  })
-});
-
-//GET /tweets request to the server
-const loadTweets = function() {
-  $(document).ready(function() {
-    $.ajax({
-      method: "GET",
-      url: "/tweets",
-    })
-      .then(function (moreTweets) {
-        //render them again
-        renderTweets(moreTweets);
-      });
   });
-};
 
-//when docment ready ask the server for all existing tweets
-$(document).ready(function() {
   loadTweets();
+
 });

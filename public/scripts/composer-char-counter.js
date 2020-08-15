@@ -31,7 +31,7 @@ $(document).ready(function() {
   }));
 
   //prevent use of right clic of the mouse to avoid to copy any text
-  $("#tweet-text").on("contextmenu",function(e){
+  $("#tweet-text").on("contextmenu",function(e) {
     return false;
   });
 
