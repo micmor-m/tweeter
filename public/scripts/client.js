@@ -18,14 +18,14 @@ $(document).ready(function() {
     <article id="tweet" class="tweet_header"> 
       <div class = msm_top>
         <div id="name_user">
-          <img src="${data.user.avatars}"> 
-          <label  for="tweet-user">"${data.user.name}"</label>
+          <img src=${data.user.avatars}> 
+          <label  for="tweet-user">${data.user.name}</label>
         </div>
-        <label for="tweet-sender">"${data.user.handle}"</label>
+        <label for="tweet-sender">${data.user.handle}</label>
       </div>
         <label for="tweet-text" name="text" id="tweet-text">${data.content.text}</label>
       <div id="days">
-        <p id="days_ago" type="submit">"${diffDays} days ago"</p>
+        <p id="days_ago" type="submit">${diffDays} days ago</p>
         <div id="icons" class="seeicons">
         <button id="btn1" type="submit"><img src="/images/flag.png"> </button>
         <button id="btn2" type="submit"><img src="/images/arrow.png"> </button>
